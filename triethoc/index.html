@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triết Học Xuân - Bộ Sưu Tập Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-red: #e63946;
+            --secondary-red: #d62828;
+            --spring-gold: #ffd166;
+            --spring-green: #06d6a0;
+            --spring-pink: #ef476f;
+            --spring-blue: #118ab2;
+            --spring-purple: #9d4edd;
+            --light-bg: #fffaf7;
+            --card-bg: #ffffff;
+            --text-dark: #1a1a2e;
+            --text-light: #6c757d;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fffaf7 0%, #fef5eb 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(230, 57, 70, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 30%, rgba(255, 209, 102, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 40% 80%, rgba(6, 214, 160, 0.03) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.1;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-red), var(--spring-pink), var(--spring-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .main-title::after {
+            content: '🌸';
+            position: absolute;
+            right: -50px;
+            top: -10px;
+            font-size: 2rem;
+            opacity: 0.7;
+            animation: blossom-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes blossom-glow {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 24px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .season-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--spring-gold), var(--spring-green));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--spring-gold));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Envelopes Grid */
+        .envelopes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .envelope-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(230, 57, 70, 0.1);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .envelope-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-red), var(--spring-gold));
+        }
+
+        .envelope-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(230, 57, 70, 0.2);
+        }
+
+        .envelope-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-red), var(--spring-pink));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2);
+        }
+
+        .envelope-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            padding-right: 60px;
+            line-height: 1.3;
+        }
+
+        .envelope-author {
+            color: var(--spring-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .envelope-author i {
+            font-size: 0.9rem;
+        }
+
+        .envelope-quote-preview {
+            font-style: italic;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex-grow: 1;
+            border-left: 3px solid var(--spring-gold);
+            padding-left: 16px;
+        }
+
+        .envelope-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+
+        .envelope-seal {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-red), var(--spring-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            border: 3px solid white;
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.2);
+            transition: var(--transition);
+        }
+
+        .envelope-card:hover .envelope-seal {
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        .envelope-hint {
+            color: var(--spring-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Calendar Section */
+        .calendar-container {
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.02), rgba(255, 209, 102, 0.02));
+            border-radius: var(--border-radius);
+            padding: 40px;
+            border: 1px solid rgba(230, 57, 70, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calendar-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, 
+                var(--primary-red), 
+                var(--spring-gold),
+                var(--spring-green),
+                var(--spring-blue),
+                var(--spring-purple)
+            );
+        }
+
+        .calendar-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .calendar-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .month-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            transition: var(--transition);
+            border: 1px solid rgba(230, 57, 70, 0.1);
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .month-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(230, 57, 70, 0.3);
+        }
+
+        .month-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-red);
+        }
+
+        .month-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .month-number {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary-red), var(--spring-pink));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .month-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .zodiac-sign {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--spring-blue), var(--spring-purple));
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .philosophy-preview {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .click-hint {
+            color: var(--spring-green);
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 46, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius);
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(230, 57, 70, 0.2);
+        }
+
+        @keyframes modalSlideUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(40px) scale(0.95); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        .modal-header {
+            padding: 32px 32px 24px;
+            border-bottom: 1px solid rgba(230, 57, 70, 0.1);
+            position: relative;
+        }
+
+        .modal-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-red), var(--spring-gold));
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 40px;
+            height: 40px;
+            background: rgba(230, 57, 70, 0.1);
+            color: var(--primary-red);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .close-modal:hover {
+            background: var(--primary-red);
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .modal-topic {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .modal-author {
+            color: var(--spring-blue);
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal-body {
+            padding: 32px;
+        }
+
+        .quote-container {
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.03), rgba(255, 209, 102, 0.03));
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 32px;
+            border-left: 4px solid var(--primary-red);
+            position: relative;
+        }
+
+        .quote-container::before {
+            content: '"';
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-red);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .modal-quote {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-section {
+            margin-bottom: 28px;
+        }
+
+        .info-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-label i {
+            font-size: 1.1rem;
+        }
+
+        .section-content {
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 1.05rem;
+            padding-left: 28px;
+        }
+
+        .modal-footer {
+            padding: 24px 32px;
+            border-top: 1px solid rgba(230, 57, 70, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.03), rgba(17, 138, 178, 0.03));
+        }
+
+        .print-btn {
+            background: linear-gradient(135deg, var(--spring-green), var(--spring-blue));
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(6, 214, 160, 0.3);
+        }
+
+        .philosophy-tag {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(230, 57, 70, 0.1);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .academic-info {
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .copyright {
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-title {
+                font-size: 3rem;
+            }
+            
+            .envelopes-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .calendar-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .envelopes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .calendar-container {
+                padding: 24px;
+            }
+            
+            .modal-content {
+                max-height: 90vh;
+            }
+            
+            .modal-header {
+                padding: 24px 24px 20px;
+            }
+            
+            .modal-body {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .envelope-card {
+                padding: 24px;
+            }
+            
+            .modal-topic {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="main-title">Triết Học Xuân</h1>
+            <p class="subtitle">Khám phá vẻ đẹp của triết học qua lăng kính mùa xuân. Mỗi phong bao lì xì chứa đựng một chân lý sâu sắc.</p>
+            <div class="season-tag">
+                <i class="fas fa-seedling"></i>
+                <span>Mùa Xuân 2026 - Sáng Tạo Triết Học</span>
+            </div>
+        </header>
+
+        <!-- Red Envelopes Section -->
+        <section class="section" id="envelopes">
+            <div class="section-header">
+                <h2 class="section-title">Lì Xì Triết Học</h2>
+                <p class="section-subtitle">6 phong bao đỏ chứa đựng tinh hoa tư tưởng triết học Mác - Lênin</p>
+            </div>
+            
+            <div class="envelopes-grid" id="envelopesGrid">
+                <!-- Envelopes will be generated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="section" id="calendar">
+            <div class="section-header">
+                <h2 class="section-title">Lịch Triết Học 12 Tháng</h2>
+                <p class="section-subtitle">Mỗi tháng là một bài học triết học ứng dụng, kết hợp với 12 con giáp</p>
+            </div>
+            
+            <div class="calendar-container">
+                <h3 class="calendar-title">Lịch Xuân Biện Chứng</h3>
+                <p class="calendar-subtitle">Click vào từng tháng để khám phá nguyên lý triết học tương ứng</p>
+                
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar months will be generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="academic-info">Sản phẩm sáng tạo Triết học Mác – Lênin | Chương 2: Vật chất – Ý thức – Vận động – Không gian – Thời gian</p>
+            <p class="copyright">© 2026 Triết Học Xuân. Tất cả nội dung được thiết kế cho mục đích học thuật.</p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <h2 class="modal-topic" id="modalTopic">Vật chất là thực tại khách quan</h2>
+                <p class="modal-author" id="modalAuthor">
+                    <i class="fas fa-quote-left"></i>
+                    <span id="modalAuthorText">— V.I. Lênin</span>
+                </p>
+            </div>
+            
+            <div class="modal-body">
+                <div class="quote-container">
+                    <p class="modal-quote" id="modalQuote">
+                        "Vật chất là một phạm trù triết học dùng để chỉ thực tại khách quan… và tồn tại không lệ thuộc vào cảm giác."
+                    </p>
+                </div>
+                
+                <div class="info-section">
+                    <div class="section-label">
+                        <i class="fas fa-book-open"></i>
+                        <span>Giải thích triết học</span>
+                    </div>
+                    <p class="section-content" id="modalExplain">
+                        Vật chất tồn tại bên ngoài và độc lập với ý thức. Ý thức chỉ là sự phản ánh hiện thực khách quan.
+                    </p>
+                </div>
+                
+                <div class="info-section">
+                    <div class="section-label">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Liên hệ thực tiễn</span>
+                    </div>
+                    <p class="section-content" id="modalApply">
+                        Kế hoạch năm mới phải xuất phát từ điều kiện thật: thời gian, lịch học, năng lực, sức khoẻ.
+                    </p>
+                </div>
+                
+                <div class="info-section">
+                    <div class="section-label">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Bài học ứng dụng</span>
+                    </div>
+                    <p class="section-content" id="modalLesson">
+                        Nhìn nhận thực tế khách quan để đặt ra mục tiêu phù hợp và khả thi.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <div class="philosophy-tag">
+                    <i class="fas fa-brain"></i>
+                    <span>Triết học Mác - Lênin • Chương 2</span>
+                </div>
+                <button class="print-btn" id="printBtn">
+                    <i class="fas fa-print"></i>
+                    <span>In nội dung</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        "use strict";
+
+        // Create floating elements
+        function createFloatingElements() {
+            const container = document.getElementById('floatingElements');
+            const symbols = ['🌸', '🌺', '🌼', '🌷', '💮', '🏵️', '✿', '❀', '❁'];
+            
+            for (let i = 0; i < 15; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-element';
+                element.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                element.style.left = Math.random() * 100 + 'vw';
+                element.style.animationDelay = Math.random() * 20 + 's';
+                element.style.fontSize = (Math.random() * 20 + 16) + 'px';
+                element.style.opacity = Math.random() * 0.15 + 0.05;
+                container.appendChild(element);
+            }
+        }
+
+        /* =========================
+          1) DỮ LIỆU LÌ XÌ (6 phong bao)
+        ========================= */
+        const philosophyEnvelopes = [
+            {
+                id: 1,
+                title: "Vật chất là thực tại khách quan",
+                author: "V.I. Lênin",
+                quote: "“Vật chất là một phạm trù triết học dùng để chỉ thực tại khách quan… và tồn tại không lệ thuộc vào cảm giác.”",
+                explain: "Vật chất tồn tại bên ngoài và độc lập với ý thức. Ý thức chỉ là sự phản ánh hiện thực khách quan.",
+                apply: "Kế hoạch năm mới (học tập/việc làm) phải xuất phát từ điều kiện thật: thời gian, lịch học, năng lực, sức khoẻ.",
+                lesson: "Nhìn nhận thực tế khách quan để đặt mục tiêu phù hợp và khả thi."
+            },
+            {
+                id: 2,
+                title: "Vận động là phương thức tồn tại của vật chất",
+                author: "Ph. Ăngghen",
+                quote: "“Vận động… là một phương thức tồn tại của vật chất, là một thuộc tính cố hữu của vật chất.”",
+                explain: "Không có vật chất không vận động. Mọi sự vật đều biến đổi theo quy luật khách quan.",
+                apply: "Kiến thức tích luỹ theo quá trình, không thể đốt cháy giai đoạn.",
+                lesson: "Kiên trì từng bước nhỏ, thay đổi sẽ đến như mùa xuân sau mùa đông."
+            },
+            {
+                id: 3,
+                title: "Đứng im chỉ là tương đối",
+                author: "Phép biện chứng duy vật",
+                quote: "Đứng im là sự ổn định tương đối của sự vật trong những điều kiện và mối quan hệ nhất định.",
+                explain: "Đứng im không phủ nhận vận động; nó là trạng thái ổn định tạm thời.",
+                apply: "Ngồi yên học bài nhưng não vẫn hoạt động: vận động vẫn diễn ra.",
+                lesson: "Tưởng dừng lại nhưng bạn vẫn tiến bộ ở một khía cạnh nào đó."
+            },
+            {
+                id: 4,
+                title: "Không gian – thời gian là hình thức tồn tại",
+                author: "V.I. Lênin",
+                quote: "“Vật chất đang vận động không thể vận động ở đâu ngoài không gian và thời gian.”",
+                explain: "Không gian và thời gian là khách quan, không tách rời vật chất vận động.",
+                apply: "Deadline = thời gian; chỗ ngồi học = không gian. Quản lý học tập là quản lý không gian – thời gian.",
+                lesson: "Sắp xếp không gian và quản lý thời gian hiệu quả là tôn trọng tính khách quan."
+            },
+            {
+                id: 5,
+                title: "Ý thức là hình ảnh chủ quan",
+                author: "C. Mác",
+                quote: "“Ý niệm chẳng qua chỉ là vật chất được chuyển vào đầu óc con người và được cải biến đi.”",
+                explain: "Ý thức phản ánh khách quan nhưng hình thức phản ánh mang tính chủ quan.",
+                apply: "Cùng một điểm số: người A xem là thất bại, người B xem là dữ kiện để cải thiện.",
+                lesson: "Chọn cách nhìn tích cực và xây dựng là phát huy tính năng động chủ quan."
+            },
+            {
+                id: 6,
+                title: "Phương pháp luận: Khách quan + Chủ quan",
+                author: "Triết học Mác – Lênin",
+                quote: "Phải xuất phát từ thực tế khách quan, đồng thời phát huy tính năng động chủ quan.",
+                explain: "Tránh duy ý chí và tránh thụ động. Ý thức tác động trở lại vật chất thông qua thực tiễn.",
+                apply: "Muốn cải thiện GPA: nhìn dữ kiện + đổi cách học + luyện tập đều.",
+                lesson: "Thành công = điều kiện thật + nỗ lực đúng hướng."
+            }
+        ];
+
+        const sealSymbols = ['🎯', '💫', '🧠', '⏳', '💡', '✨'];
+
+        /* =========================
+          2) DỮ LIỆU 12 THÁNG + 12 CON GIÁP
+        ========================= */
+        const zodiacMonths = [
+            { monthNo: 1, month: "Tháng 1", zodiac: "Tý", color: "#e63946" },
+            { monthNo: 2, month: "Tháng 2", zodiac: "Sửu", color: "#ff9e6d" },
+            { monthNo: 3, month: "Tháng 3", zodiac: "Dần", color: "#ffd166" },
+            { monthNo: 4, month: "Tháng 4", zodiac: "Mão", color: "#06d6a0" },
+            { monthNo: 5, month: "Tháng 5", zodiac: "Thìn", color: "#118ab2" },
+            { monthNo: 6, month: "Tháng 6", zodiac: "Tỵ", color: "#073b4c" },
+            { monthNo: 7, month: "Tháng 7", zodiac: "Ngọ", color: "#ef476f" },
+            { monthNo: 8, month: "Tháng 8", zodiac: "Mùi", color: "#9d4edd" },
+            { monthNo: 9, month: "Tháng 9", zodiac: "Thân", color: "#ff9e00" },
+            { monthNo: 10, month: "Tháng 10", zodiac: "Dậu", color: "#3a86ff" },
+            { monthNo: 11, month: "Tháng 11", zodiac: "Tuất", color: "#8338ec" },
+            { monthNo: 12, month: "Tháng 12", zodiac: "Hợi", color: "#ff006e" },
+        ];
+
+        // 12 bài học triết học ứng dụng
+        const zodiacDialecticLessons = {
+            1: { 
+                topic: "Vật chất khách quan", 
+                principle: "Vật chất tồn tại độc lập với ý thức.", 
+                explain: "Ý thức chỉ phản ánh hiện thực khách quan.", 
+                apply: "Đặt mục tiêu dựa vào dữ kiện thật (thời gian, năng lực, lịch học)." 
+            },
+            2: { 
+                topic: "Ý thức phản ánh", 
+                principle: "Ý thức là hình ảnh chủ quan của thế giới khách quan.", 
+                explain: "Phản ánh có chọn lọc, phụ thuộc tri thức – kinh nghiệm.", 
+                apply: "Cùng một việc, đổi góc nhìn đúng → hành động đúng." 
+            },
+            3: { 
+                topic: "Nguồn gốc ý thức", 
+                principle: "Ý thức nảy sinh từ bộ óc người + lao động + ngôn ngữ.", 
+                explain: "Không tách ý thức khỏi điều kiện vật chất – xã hội.", 
+                apply: "Muốn giỏi lên: học trong môi trường, có tương tác, có luyện tập." 
+            },
+            4: { 
+                topic: "Tính năng động của ý thức", 
+                principle: "Ý thức có thể tác động trở lại vật chất qua thực tiễn.", 
+                explain: "Không duy ý chí, nhưng cũng không thụ động.", 
+                apply: "Lập kế hoạch + kỷ luật → kết quả thay đổi thật." 
+            },
+            5: { 
+                topic: "Vận động", 
+                principle: "Vận động là phương thức tồn tại của vật chất.", 
+                explain: "Mọi sự vật đều biến đổi, chuyển hoá.", 
+                apply: "Chia nhỏ mục tiêu, làm đều → tích luỹ theo quá trình." 
+            },
+            6: { 
+                topic: "Các hình thức vận động", 
+                principle: "Vận động đa dạng: cơ học, vật lý, hoá học, sinh học, xã hội.", 
+                explain: "Cái cao dựa trên cái thấp nhưng không thể quy giản hoàn toàn.", 
+                apply: "Học tập có nhiều 'tầng': thói quen + tư duy + kỹ năng." 
+            },
+            7: { 
+                topic: "Đứng im tương đối", 
+                principle: "Đứng im là ổn định tương đối trong điều kiện nhất định.", 
+                explain: "Đứng im là 'một dạng' của vận động.", 
+                apply: "Tạo routine (giờ học/giờ ngủ) để ổn định mà tiến bộ." 
+            },
+            8: { 
+                topic: "Không gian", 
+                principle: "Không gian là hình thức tồn tại của vật chất vận động.", 
+                explain: "Trật tự, kết cấu, sự cùng tồn tại của sự vật.", 
+                apply: "Tối ưu góc học tập: gọn – ít nhiễu – đủ ánh sáng." 
+            },
+            9: { 
+                topic: "Thời gian", 
+                principle: "Thời gian là hình thức tồn tại, thể hiện sự kế tiếp – diễn biến.", 
+                explain: "Quá trình có trước – sau, nhịp độ, deadline.", 
+                apply: "Dùng lịch tuần + Pomodoro để biến thời gian thành 'đòn bẩy'." 
+            },
+            10: { 
+                topic: "Không gian–thời gian thống nhất với vật chất", 
+                principle: "Không có vật chất vận động ngoài không gian và thời gian.", 
+                explain: "Không có 'khung rỗng' thuần tuý tách rời vật chất.", 
+                apply: "Muốn hiệu quả: quản lý cả không gian lẫn thời gian." 
+            },
+            11: { 
+                topic: "Tôn trọng khách quan", 
+                principle: "Xuất phát từ điều kiện khách quan của sự vật.", 
+                explain: "Tránh ảo tưởng, tránh 'tự áp KPI' vượt thực tế.", 
+                apply: "Đo đúng năng lực hiện tại rồi mới nâng dần." 
+            },
+            12: { 
+                topic: "Phương pháp luận (khách quan + chủ quan)", 
+                principle: "Tôn trọng khách quan + phát huy năng động chủ quan.", 
+                explain: "Ý thức tác động trở lại vật chất thông qua thực tiễn.", 
+                apply: "Chốt mục tiêu → kế hoạch → đo tiến độ → điều chỉnh." 
+            },
+        };
+
+        /* =========================
+          3) MODAL FUNCTIONS
+        ========================= */
+        const modalOverlay = document.getElementById('modalOverlay');
+        const closeModalBtn = document.getElementById('closeModal');
+        const modalTopic = document.getElementById('modalTopic');
+        const modalAuthor = document.getElementById('modalAuthorText');
+        const modalQuote = document.getElementById('modalQuote');
+        const modalExplain = document.getElementById('modalExplain');
+        const modalApply = document.getElementById('modalApply');
+        const modalLesson = document.getElementById('modalLesson');
+        const printBtn = document.getElementById('printBtn');
+
+        function openModalPayload({ title, author, quote, explain, apply, lesson, type = 'envelope' }) {
+            modalTopic.textContent = title;
+            modalAuthor.textContent = author ? `— ${author}` : "";
+            modalQuote.textContent = quote || "";
+            modalExplain.textContent = explain || "";
+            modalApply.textContent = apply || "";
+            modalLesson.textContent = lesson || "";
+
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Add confetti effect for first envelope click
+            if (type === 'envelope' && !window.hasShownConfetti) {
+                createConfetti();
+                window.hasShownConfetti = true;
+            }
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal events
+        closeModalBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+        });
+
+        // Print button
+        printBtn.addEventListener('click', () => {
+            const printContent = `
+                <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto;">
+                    <h1 style="color: #e63946; border-bottom: 3px solid #ffd166; padding-bottom: 10px;">${modalTopic.textContent}</h1>
+                    <p style="color: #118ab2; font-weight: bold; font-size: 1.1em;">${document.getElementById('modalAuthorText').textContent}</p>
+                    <div style="background: #f8f9fa; padding: 20px; border-left: 4px solid #e63946; margin: 20px 0; font-style: italic; font-size: 1.1em;">
+                        ${modalQuote.textContent}
+                    </div>
+                    <h3 style="color: #e63946;">Giải thích triết học</h3>
+                    <p>${modalExplain.textContent}</p>
+                    <h3 style="color: #e63946;">Liên hệ thực tiễn</h3>
+                    <p>${modalApply.textContent}</p>
+                    <h3 style="color: #e63946;">Bài học ứng dụng</h3>
+                    <p>${modalLesson.textContent}</p>
+                    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 0.9em;">
+                        Triết Học Xuân © 2026 | Chương 2: Vật chất – Ý thức – Vận động
+                    </div>
+                </div>
+            `;
+            
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(printContent);
+            printWindow.document.close();
+            printWindow.print();
+        });
+
+        /* =========================
+          4) INITIALIZE ENVELOPES
+        ========================= */
+        function initEnvelopes() {
+            const grid = document.getElementById('envelopesGrid');
+            grid.innerHTML = "";
+
+            philosophyEnvelopes.forEach((envelope, index) => {
+                const card = document.createElement('div');
+                card.className = 'envelope-card';
+                card.innerHTML = `
+                    <div class="envelope-number">${envelope.id}</div>
+                    <h3 class="envelope-title">${envelope.title}</h3>
+                    <p class="envelope-author">
+                        <i class="fas fa-feather-alt"></i>
+                        ${envelope.author}
+                    </p>
+                    <p class="envelope-quote-preview">${envelope.quote}</p>
+                    <div class="envelope-footer">
+                        <div class="envelope-seal">${sealSymbols[index]}</div>
+                        <p class="envelope-hint">
+                            <i class="fas fa-hand-pointer"></i>
+                            Click để mở
+                        </p>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => {
+                    openModalPayload({
+                        title: envelope.title,
+                        author: envelope.author,
+                        quote: envelope.quote,
+                        explain: envelope.explain,
+                        apply: envelope.apply,
+                        lesson: envelope.lesson,
+                        type: 'envelope'
+                    });
+                });
+                
+                grid.appendChild(card);
+            });
+        }
+
+        /* =========================
+          5) INITIALIZE CALENDAR
+        ========================= */
+        function initCalendar() {
+            const grid = document.getElementById('calendarGrid');
+            grid.innerHTML = "";
+
+            zodiacMonths.forEach((month) => {
+                const lesson = zodiacDialecticLessons[month.monthNo];
+                const card = document.createElement('div');
+                card.className = 'month-card';
+                card.style.borderTopColor = month.color;
+                
+                card.innerHTML = `
+                    <div class="month-header">
+                        <div class="month-number" style="background: ${month.color}">${month.monthNo}</div>
+                        <h4 class="month-name">${month.month}</h4>
+                    </div>
+                    <div class="zodiac-sign" style="background: ${month.color}">${month.zodiac}</div>
+                    <p class="philosophy-preview">${lesson.topic}: ${lesson.principle}</p>
+                    <p class="click-hint">
+                        <i class="fas fa-mouse-pointer"></i>
+                        Click để xem chi tiết
+                    </p>
+                `;
+                
+                card.addEventListener('click', () => {
+                    openModalPayload({
+                        title: `${month.month} • ${month.zodiac} - ${lesson.topic}`,
+                        author: "Triết học Mác – Lênin (Chương 2)",
+                        quote: lesson.principle,
+                        explain: lesson.explain,
+                        apply: lesson.apply,
+                        lesson: "Gợi ý: Chọn 1 hành động nhỏ hôm nay (10-20 phút) để biến 'ý thức' thành 'thực tiễn'.",
+                        type: 'calendar'
+                    });
+                });
+                
+                grid.appendChild(card);
+            });
+        }
+
+        /* =========================
+          6) CONFETTI EFFECT
+        ========================= */
+        function createConfetti() {
+            const colors = ['#e63946', '#ffd166', '#06d6a0', '#ef476f', '#118ab2', '#9d4edd'];
+            const container = document.createElement('div');
+            container.style.position = 'fixed';
+            container.style.top = '0';
+            container.style.left = '0';
+            container.style.width = '100%';
+            container.style.height = '100%';
+            container.style.pointerEvents = 'none';
+            container.style.zIndex = '9999';
+            document.body.appendChild(container);
+
+            for (let i = 0; i < 80; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'absolute';
+                confetti.style.width = '12px';
+                confetti.style.height = '12px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-20px';
+                
+                container.appendChild(confetti);
+
+                const animation = confetti.animate([
+                    { 
+                        transform: 'translateY(0) rotate(0deg)', 
+                        opacity: 1 
+                    },
+                    { 
+                        transform: `translateY(${window.innerHeight + 100}px) rotate(${360 * Math.random()}deg)`, 
+                        opacity: 0 
+                    }
+                ], {
+                    duration: 2000 + Math.random() * 2000,
+                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                });
+
+                animation.onfinish = () => {
+                    confetti.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                };
+            }
+        }
+
+        /* =========================
+          7) INITIALIZE EVERYTHING
+        ========================= */
+        document.addEventListener('DOMContentLoaded', () => {
+            createFloatingElements();
+            initEnvelopes();
+            initCalendar();
+            
+            // Add hover effects to envelopes
+            const envelopes = document.querySelectorAll('.envelope-card');
+            envelopes.forEach(env => {
+                env.addEventListener('mouseenter', function() {
+                    const seal = this.querySelector('.envelope-seal');
+                    if (seal) {
+                        seal.style.transform = 'scale(1.15) rotate(-8deg)';
+                    }
+                });
+                
+                env.addEventListener('mouseleave', function() {
+                    const seal = this.querySelector('.envelope-seal');
+                    if (seal) {
+                        seal.style.transform = 'scale(1) rotate(0deg)';
+                    }
+                });
+            });
+            
+            // Initialize confetti flag
+            window.hasShownConfetti = false;
+        });
+    </script>
+</body>
+</html>
