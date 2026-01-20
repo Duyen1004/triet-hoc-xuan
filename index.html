@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triết Học Xuân - Chào Xuân 2026</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700;800&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --tet-red: #e10600;
+            --tet-gold: #ffd700;
+            --tet-orange: #ff6b35;
+            --tet-yellow: #ffd166;
+            --tet-pink: #ff6b8b;
+            --tet-green: #38b000;
+            --tet-purple: #9d4edd;
+            --tet-blue: #0077b6;
+            --light-bg: #fff9f0;
+            --card-bg: #ffffff;
+            --text-dark: #1a0f0f;
+            --text-light: #8a4b4b;
+            --shadow-sm: 0 4px 15px rgba(225, 6, 0, 0.1);
+            --shadow-md: 0 8px 30px rgba(225, 6, 0, 0.15);
+            --shadow-lg: 0 16px 50px rgba(225, 6, 0, 0.2);
+            --shadow-gold: 0 0 30px rgba(255, 215, 0, 0.3);
+            --border-radius: 25px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background: linear-gradient(135deg, #fff9f0 0%, #fff0e6 50%, #ffe6e6 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 90% 30%, rgba(225, 6, 0, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 40% 80%, rgba(56, 176, 0, 0.1) 0%, transparent 30%);
+        }
+
+        /* Firework Animation */
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: firework-explode 2s ease-out forwards;
+        }
+
+        @keyframes firework-explode {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Lantern Animation */
+        .lanterns {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .lantern {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.7;
+            animation: lantern-float 15s infinite linear;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+        }
+
+        @keyframes lantern-float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            90% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header with Tet Decoration */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding: 50px 0;
+            background: linear-gradient(135deg,
+                    rgba(225, 6, 0, 0.08),
+                    rgba(255, 215, 0, 0.08));
+            border-radius: var(--border-radius);
+            border: 3px solid var(--tet-gold);
+            box-shadow: var(--shadow-lg), 0 0 40px rgba(255, 107, 53, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tet-red), var(--tet-gold), var(--tet-orange), var(--tet-green));
+        }
+
+        .header::after {
+            content: '🎆 🎇 🎉 🧧 🏮 🌸 🍊 🥮';
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 15px;
+            opacity: 0.6;
+            letter-spacing: 15px;
+        }
+
+        .main-title {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            background: linear-gradient(135deg,
+                    var(--tet-red) 0%,
+                    var(--tet-orange) 25%,
+                    var(--tet-gold) 50%,
+                    var(--tet-green) 75%,
+                    var(--tet-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            position: relative;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+            animation: title-sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes title-sparkle {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 4px 8px rgba(225, 6, 0, 0.3));
+            }
+
+            50% {
+                filter: drop-shadow(0 8px 24px rgba(255, 215, 0, 0.4));
+            }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--tet-red);
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-weight: 550;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        .tet-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--tet-red), var(--tet-orange));
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-md), 0 8px 25px rgba(225, 6, 0, 0.3);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--tet-gold);
+        }
+
+        .tet-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.3),
+                    transparent);
+            transition: left 0.7s ease;
+        }
+
+        .tet-tag:hover::before {
+            left: 100%;
+        }
+
+        .tet-tag:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: var(--shadow-lg), 0 12px 35px rgba(225, 6, 0, 0.4);
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        .section::before {
+            content: '❁ ❁ ❁';
+            position: absolute;
+            top: -30px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            color: var(--tet-red);
+            opacity: 0.3;
+            letter-spacing: 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--tet-red);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            text-shadow: 2px 2px 0 var(--tet-gold);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(90deg, var(--tet-red), var(--tet-gold));
+            border-radius: 3px;
+            animation: underline-sparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes underline-sparkle {
+
+            0%,
+            100% {
+                box-shadow: 0 0 15px var(--tet-red);
+            }
+
+            50% {
+                box-shadow: 0 0 25px var(--tet-gold);
+            }
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        /* Red Envelopes with Tet Design */
+        .envelopes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+            perspective: 1000px;
+        }
+
+        .envelope-card {
+            background: linear-gradient(135deg, #fff0f0, #fff9f0);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--tet-gold);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transform-style: preserve-3d;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(225, 6, 0, 0.1) 0%, transparent 40%);
+        }
+
+        .envelope-card::before {
+            content: '🧧';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 50px;
+            opacity: 0.2;
+            transform: rotate(-15deg);
+        }
+
+        .envelope-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tet-red), var(--tet-gold), var(--tet-orange));
+            transform: translateZ(10px);
+        }
+
+        .envelope-card:hover {
+            transform: translateY(-15px) rotateX(8deg) scale(1.02);
+            box-shadow: var(--shadow-lg), var(--shadow-gold), 0 25px 60px rgba(225, 6, 0, 0.3);
+            border-color: var(--tet-red);
+        }
+
+        .envelope-number {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--tet-red), var(--tet-orange));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.3rem;
+            box-shadow: 0 6px 20px rgba(225, 6, 0, 0.4), inset 0 4px 15px rgba(255, 255, 255, 0.3);
+            transform: translateZ(20px);
+            animation: number-bounce 2s ease-in-out infinite;
+            border: 3px solid var(--tet-gold);
+        }
+
+        @keyframes number-bounce {
+
+            0%,
+            100% {
+                transform: translateZ(20px) scale(1);
+            }
+
+            50% {
+                transform: translateZ(20px) scale(1.1) rotate(15deg);
+            }
+        }
+
+        .envelope-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--tet-red);
+            margin-bottom: 20px;
+            padding-right: 70px;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .envelope-author {
+            color: var(--tet-blue);
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .envelope-author i {
+            font-size: 0.9rem;
+            animation: icon-sparkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes icon-sparkle {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+                color: var(--tet-gold);
+            }
+        }
+
+        .envelope-quote-preview {
+            font-style: italic;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            flex-grow: 1;
+            border-left: 4px solid var(--tet-gold);
+            padding-left: 20px;
+            position: relative;
+            z-index: 1;
+            font-size: 1rem;
+        }
+
+        .envelope-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .envelope-seal {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--tet-red), var(--tet-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            border: 3px solid white;
+            box-shadow: 0 8px 25px rgba(225, 6, 0, 0.4), inset 0 4px 15px rgba(255, 255, 255, 0.4);
+            transition: var(--transition);
+            animation: seal-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes seal-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 8px 25px rgba(225, 6, 0, 0.4),
+                    inset 0 4px 15px rgba(255, 255, 255, 0.4),
+                    0 0 15px var(--tet-gold);
+            }
+
+            50% {
+                box-shadow: 0 12px 35px rgba(225, 6, 0, 0.6),
+                    inset 0 6px 20px rgba(255, 255, 255, 0.6),
+                    0 0 30px var(--tet-gold);
+            }
+        }
+
+        .envelope-card:hover .envelope-seal {
+            animation: seal-explode 0.6s ease;
+            transform: scale(1.2);
+        }
+
+        @keyframes seal-explode {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.3) rotate(180deg);
+            }
+
+            100% {
+                transform: scale(1.2) rotate(360deg);
+            }
+        }
+
+        .envelope-hint {
+            color: var(--tet-green);
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: hint-twinkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes hint-twinkle {
+
+            0%,
+            100% {
+                opacity: 1;
+                color: var(--tet-green);
+            }
+
+            50% {
+                opacity: 0.8;
+                color: var(--tet-gold);
+            }
+        }
+
+        /* Calendar Section - Tet Edition */
+        .calendar-container {
+            background: linear-gradient(135deg,
+                    rgba(225, 6, 0, 0.05),
+                    rgba(255, 215, 0, 0.05));
+            border-radius: var(--border-radius);
+            padding: 50px;
+            border: 3px solid var(--tet-gold);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(225, 6, 0, 0.1) 0%, transparent 50%);
+        }
+
+        .calendar-container::before {
+            content: '⛩️ 🏮 🎎 🎊 🎋 🎍';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 22px;
+            opacity: 0.2;
+            letter-spacing: 30px;
+        }
+
+        .calendar-title {
+            text-align: center;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--tet-red);
+            margin-bottom: 12px;
+            position: relative;
+            text-shadow: 2px 2px 0 var(--tet-gold);
+        }
+
+        .calendar-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .month-card {
+            background: linear-gradient(135deg, white, #fff5f5);
+            border-radius: 18px;
+            padding: 30px;
+            transition: var(--transition);
+            border: 3px solid var(--tet-gold);
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            background-image:
+                linear-gradient(45deg, rgba(255, 215, 0, 0.05) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(225, 6, 0, 0.05) 25%, transparent 25%);
+            background-size: 20px 20px;
+        }
+
+        .month-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: var(--shadow-lg), 0 15px 30px rgba(225, 6, 0, 0.2);
+            border-color: var(--tet-red);
+        }
+
+        .month-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--tet-red), var(--tet-gold), var(--tet-orange));
+            transform: translateZ(5px);
+        }
+
+        .month-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .month-number {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--tet-red), var(--tet-orange));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+            border: 3px solid var(--tet-gold);
+            animation: month-spark 2s ease-in-out infinite;
+        }
+
+        @keyframes month-spark {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4),
+                    0 0 10px var(--tet-red);
+            }
+
+            50% {
+                box-shadow: 0 6px 25px rgba(225, 6, 0, 0.6),
+                    0 0 20px var(--tet-gold);
+            }
+        }
+
+        .month-name {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--tet-red);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .zodiac-sign {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--tet-blue), var(--tet-purple));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(17, 119, 182, 0.3);
+            position: relative;
+            z-index: 1;
+            border: 2px solid var(--tet-gold);
+            animation: zodiac-float 3s ease-in-out infinite;
+        }
+
+        @keyframes zodiac-float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .philosophy-preview {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+        }
+
+        .click-hint {
+            color: var(--tet-green);
+            font-size: 0.9rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+            animation: hint-slide 2s ease-in-out infinite;
+        }
+
+        @keyframes hint-slide {
+
+            0%,
+            100% {
+                transform: translateX(0);
+                color: var(--tet-green);
+            }
+
+            50% {
+                transform: translateX(8px);
+                color: var(--tet-gold);
+            }
+        }
+
+        /* Modal - Tet Celebration */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 15, 15, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+            backdrop-filter: blur(12px);
+            animation: modal-entrance 0.4s ease;
+        }
+
+        @keyframes modal-entrance {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #fff5f5, #fff9f0);
+            border-radius: var(--border-radius);
+            max-width: 750px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modal-celebration 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 50px rgba(255, 215, 0, 0.3);
+            border: 4px solid var(--tet-gold);
+        }
+
+        @keyframes modal-celebration {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.9) rotateX(-15deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotateX(0);
+            }
+        }
+
+        .modal-header {
+            padding: 40px 40px 25px;
+            border-bottom: 3px solid var(--tet-gold);
+            position: relative;
+            background: linear-gradient(135deg,
+                    rgba(225, 6, 0, 0.08),
+                    rgba(255, 215, 0, 0.08));
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e10600' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .modal-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: repeating-linear-gradient(90deg,
+                    var(--tet-red), var(--tet-gold), var(--tet-orange));
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, rgba(225, 6, 0, 0.1), rgba(255, 215, 0, 0.1));
+            color: var(--tet-red);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--tet-gold);
+        }
+
+        .close-modal:hover {
+            background: linear-gradient(135deg, var(--tet-red), var(--tet-orange));
+            color: white;
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(225, 6, 0, 0.4);
+        }
+
+        .modal-topic {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--tet-red);
+            margin-bottom: 12px;
+            line-height: 1.2;
+            position: relative;
+            text-shadow: 2px 2px 0 rgba(255, 215, 0, 0.3);
+        }
+
+        .modal-author {
+            color: var(--tet-blue);
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: author-entrance 1s ease-out;
+        }
+
+        @keyframes author-entrance {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .modal-body {
+            padding: 40px;
+        }
+
+        .quote-container {
+            background: linear-gradient(135deg,
+                    rgba(225, 6, 0, 0.08),
+                    rgba(255, 215, 0, 0.08));
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 40px;
+            border-left: 6px solid var(--tet-red);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 3px solid var(--tet-gold);
+            animation: quote-celebrate 3s ease-in-out infinite;
+        }
+
+        @keyframes quote-celebrate {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                box-shadow: var(--shadow-md);
+            }
+
+            50% {
+                transform: translateY(-6px);
+                box-shadow: var(--shadow-lg), 0 0 25px rgba(255, 215, 0, 0.3);
+            }
+        }
+
+        .quote-container::before {
+            content: '🧧';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 60px;
+            opacity: 0.1;
+        }
+
+        .modal-quote {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .info-section {
+            margin-bottom: 35px;
+            animation: section-tet 0.7s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes section-tet {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .info-section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .info-section:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .section-label {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--tet-red);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-label i {
+            font-size: 1.2rem;
+            animation: icon-tet 2s linear infinite;
+            color: var(--tet-gold);
+        }
+
+        @keyframes icon-tet {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .section-content {
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 1.05rem;
+            padding-left: 32px;
+            border-left: 3px solid var(--tet-gold);
+            font-weight: 500;
+        }
+
+        .modal-footer {
+            padding: 30px 40px;
+            border-top: 3px solid var(--tet-gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg,
+                    rgba(56, 176, 0, 0.08),
+                    rgba(17, 119, 182, 0.08));
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .print-btn {
+            background: linear-gradient(135deg, var(--tet-green), var(--tet-blue));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(56, 176, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--tet-gold);
+        }
+
+        .print-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.3),
+                    transparent);
+            transition: left 0.7s ease;
+        }
+
+        .print-btn:hover::before {
+            left: 100%;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(56, 176, 0, 0.6), 0 0 25px var(--tet-gold);
+        }
+
+        .philosophy-tag {
+            color: var(--tet-orange);
+            font-size: 0.95rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: tag-tet 2s ease-in-out infinite;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes tag-tet {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                color: var(--tet-orange);
+            }
+
+            50% {
+                transform: translateY(-3px);
+                color: var(--tet-gold);
+            }
+        }
+
+        /* Footer Tet Decoration */
+        .footer {
+            text-align: center;
+            padding: 60px 20px 30px;
+            margin-top: 80px;
+            border-top: 3px solid var(--tet-gold);
+            color: var(--text-light);
+            font-size: 1rem;
+            position: relative;
+            background: linear-gradient(135deg,
+                    rgba(225, 6, 0, 0.05),
+                    rgba(255, 215, 0, 0.05));
+            border-radius: var(--border-radius);
+        }
+
+        .footer::before {
+            content: '🎉 CHÚC MỪNG NĂM MỚI 2026 🎉';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--tet-red), var(--tet-orange));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(225, 6, 0, 0.3);
+            border: 3px solid var(--tet-gold);
+            white-space: nowrap;
+            animation: footer-celebrate 3s ease-in-out infinite;
+        }
+
+        @keyframes footer-celebrate {
+
+            0%,
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+
+            50% {
+                transform: translateX(-50%) scale(1.03);
+            }
+        }
+
+        .academic-info {
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--tet-red);
+        }
+
+        .copyright {
+            opacity: 0.9;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+
+            .envelopes-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                padding: 15px;
+                max-width: 100%;
+            }
+
+            .header {
+                padding: 50px 0;
+                margin-bottom: 50px;
+            }
+
+            .main-title {
+                font-size: 2.8rem;
+                margin-bottom: 15px;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .envelopes-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 25px;
+            }
+
+            .calendar-container {
+                padding: 40px 30px;
+            }
+
+            .modal-content {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 0;
+            }
+
+            .main-title {
+                font-size: 2.3rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+
+            .tet-tag {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+
+            .envelopes-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .calendar-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .calendar-container {
+                padding: 40px 20px;
+            }
+
+            .modal-header {
+                padding: 30px 25px 20px;
+            }
+
+            .modal-body {
+                padding: 30px;
+            }
+
+            .modal-topic {
+                font-size: 1.8rem;
+            }
+
+            .modal-author {
+                font-size: 1rem;
+            }
+
+            .modal-quote {
+                font-size: 1.2rem;
+            }
+
+            .modal-footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                padding: 25px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 30px 0;
+            }
+
+            .main-title {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .tet-tag {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .envelope-card {
+                padding: 25px;
+            }
+
+            .envelope-title {
+                font-size: 1.3rem;
+            }
+
+            .envelope-seal {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .month-card {
+                padding: 25px;
+            }
+
+            .month-name {
+                font-size: 1.3rem;
+            }
+
+            .modal-topic {
+                font-size: 1.5rem;
+            }
+
+            .modal-quote {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 1rem;
+                padding-left: 25px;
+            }
+
+            .footer {
+                padding: 50px 15px 25px;
+                margin-top: 60px;
+            }
+
+            .footer::before {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+                top: -15px;
+            }
+        }
+
+        /* Optimization for large screens */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1360px;
+            }
+
+            .envelopes-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1600px) {
+            html {
+                font-size: 18px;
+            }
+
+            .container {
+                max-width: 1500px;
+            }
+
+            .header {
+                padding: 70px 0;
+            }
+
+            .main-title {
+                font-size: 4rem;
+            }
+
+            .subtitle {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 3rem;
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Firework Animation -->
+
+    <!-- Lantern Animation -->
+    <div class="lanterns" id="lanterns"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="main-title">
+                <span style="font-family: 'Dancing Script', cursive; font-size: 6rem;">🐴</span>
+                TRIẾT HỌC XUÂN 2026
+            </h1>
+            <p class="subtitle">Chào đón năm mới Bính Ngọ với những tư tưởng triết học sâu sắc. Mừng Xuân mới - Học điều
+                hay!</p>
+            <div class="tet-tag">
+                <i class="fas fa-dragon"></i>
+                <span>XUÂN BÍNH NGỌ 2026 - TRI THỨC KHỞI ĐẦU</span>
+            </div>
+        </header>
+
+        <!-- Red Envelopes Section -->
+        <section class="section" id="envelopes">
+            <div class="section-header">
+                <h2 class="section-title">LÌ XÌ TRIẾT HỌC</h2>
+                <p class="section-subtitle">6 phong bao đỏ may mắn - 6 chân lý triết học nền tảng cho năm mới thịnh
+                    vượng</p>
+            </div>
+
+            <div class="envelopes-grid" id="envelopesGrid">
+                <!-- Envelopes will be generated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="section" id="calendar">
+            <div class="section-header">
+                <h2 class="section-title">LỊCH XUÂN TRIẾT LÝ</h2>
+                <p class="section-subtitle">12 tháng - 12 con giáp - 12 bài học triết học ứng dụng cho cả năm thăng tiến
+                </p>
+            </div>
+
+            <div class="calendar-container">
+                <h3 class="calendar-title">📅 LỊCH XUÂN BIỆN CHỨNG</h3>
+                <p class="calendar-subtitle">Mỗi tháng là một bước tiến trong hành trình khám phá triết học</p>
+
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar months will be generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="academic-info">SẢN PHẨM SÁNG TẠO TRIẾT HỌC MÁC – LÊNIN | CHƯƠNG 2: VẬT CHẤT – Ý THỨC – VẬN ĐỘNG
+            </p>
+            <p class="copyright">© 2026 Triết Học Xuân. Chúc mọi người một năm mới AN KHANG - THỊNH VƯỢNG - TRI THỨC ĐẦY
+                ĐỦ!</p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="modal-header">
+                <h2 class="modal-topic" id="modalTopic">Vật chất là thực tại khách quan</h2>
+                <p class="modal-author" id="modalAuthor">
+                    <i class="fas fa-quote-left"></i>
+                    <span id="modalAuthorText">— V.I. Lênin</span>
+                </p>
+            </div>
+
+            <div class="modal-body">
+                <div class="quote-container">
+                    <p class="modal-quote" id="modalQuote">
+                        "Vật chất là một phạm trù triết học dùng để chỉ thực tại khách quan… và tồn tại không lệ thuộc
+                        vào cảm giác."
+                    </p>
+                </div>
+
+                <div class="info-section">
+                    <div class="section-label">
+                        <i class="fas fa-book-open"></i>
+                        <span>GIẢI THÍCH TRIẾT HỌC</span>
+                    </div>
+                    <p class="section-content" id="modalExplain">
+                        Vật chất tồn tại bên ngoài và độc lập với ý thức. Ý thức chỉ là sự phản ánh hiện thực khách
+                        quan.
+                    </p>
+                </div>
+
+                <div class="info-section">
+                    <div class="section-label">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>LIÊN HỆ THỰC TIỄN</span>
+                    </div>
+                    <p class="section-content" id="modalApply">
+                        Kế hoạch năm mới phải xuất phát từ điều kiện thật: thời gian, lịch học, năng lực, sức khoẻ.
+                    </p>
+                </div>
+
+                <div class="info-section">
+                    <div class="section-label">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>BÀI HỌC ỨNG DỤNG</span>
+                    </div>
+                    <p class="section-content" id="modalLesson">
+                        Nhìn nhận thực tế khách quan để đặt ra mục tiêu phù hợp và khả thi.
+                    </p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="philosophy-tag">
+                    <i class="fas fa-dragon"></i>
+                    <span>TRIẾT HỌC XUÂN 2026 - CHƯƠNG 2</span>
+                </div>
+                <button class="print-btn" id="printBtn">
+                    <i class="fas fa-print"></i>
+                    <span>IN LÌ XÌ TRIẾT HỌC</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        "use strict";
+
+        /* =========================
+          TET ANIMATIONS
+        ========================= */
+        function createFireworks() {
+            const container = document.getElementById('fireworks');
+            const colors = [
+                '#e10600', '#ffd700', '#ff6b35',
+                '#ff6b8b', '#38b000', '#9d4edd'
+            ];
+
+            setInterval(() => {
+                for (let i = 0; i < 5; i++) {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.style.left = Math.random() * 100 + 'vw';
+                    firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    firework.style.animationDelay = Math.random() * 0.5 + 's';
+                    firework.style.boxShadow = `0 0 20px ${firework.style.background}`;
+
+                    setTimeout(() => {
+                        firework.remove();
+                    }, 2000);
+                }
+            }, 1500);
+        }
+
+        function createLanterns() {
+            const container = document.getElementById('lanterns');
+            const lanterns = ['🏮', '🎏', '🎎', '🧧', '🌸', '🍊'];
+
+            for (let i = 0; i < 15; i++) {
+                const lantern = document.createElement('div');
+                lantern.className = 'lantern';
+                lantern.innerHTML = lanterns[Math.floor(Math.random() * lanterns.length)];
+                lantern.style.left = Math.random() * 100 + 'vw';
+                lantern.style.animationDelay = Math.random() * 15 + 's';
+                lantern.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                container.appendChild(lantern);
+            }
+        }
+
+        /* =========================
+          DATA - TET EDITION
+        ========================= */
+        const philosophyEnvelopes = [
+            {
+                id: 1,
+                title: "Vật chất là thực tại khách quan",
+                author: "V.I. Lênin",
+                quote: "“Vật chất là một phạm trù triết học dùng để chỉ thực tại khách quan… và tồn tại không lệ thuộc vào cảm giác.”",
+                explain: "Vật chất tồn tại bên ngoài và độc lập với ý thức. Ý thức chỉ là sự phản ánh hiện thực khách quan.",
+                apply: "Kế hoạch năm mới phải xuất phát từ điều kiện thật: thời gian, lịch học, năng lực, sức khoẻ.",
+                lesson: "Nhìn nhận thực tế khách quan để đặt mục tiêu phù hợp và khả thi."
+            },
+            {
+                id: 2,
+                title: "Vận động là phương thức tồn tại",
+                author: "Ph. Ăngghen",
+                quote: "“Vận động là một phương thức tồn tại của vật chất, là một thuộc tính cố hữu của vật chất.”",
+                explain: "Không có vật chất không vận động. Mọi sự vật đều biến đổi theo quy luật khách quan.",
+                apply: "Kiến thức tích luỹ theo quá trình, không thể đốt cháy giai đoạn.",
+                lesson: "Kiên trì từng bước nhỏ, thay đổi sẽ đến như mùa xuân sau mùa đông."
+            },
+            {
+                id: 3,
+                title: "Đứng im chỉ là tương đối",
+                author: "Phép biện chứng duy vật",
+                quote: "Đứng im là sự ổn định tương đối của sự vật trong những điều kiện và mối quan hệ nhất định.",
+                explain: "Đứng im không phủ nhận vận động; nó là trạng thái ổn định tạm thời.",
+                apply: "Ngồi yên học bài nhưng não vẫn hoạt động: vận động vẫn diễn ra.",
+                lesson: "Tưởng dừng lại nhưng bạn vẫn tiến bộ ở một khía cạnh nào đó."
+            },
+            {
+                id: 4,
+                title: "Không gian – thời gian là hình thức tồn tại",
+                author: "V.I. Lênin",
+                quote: "“Vật chất đang vận động không thể vận động ở đâu ngoài không gian và thời gian.”",
+                explain: "Không gian và thời gian là khách quan, không tách rời vật chất vận động.",
+                apply: "Deadline = thời gian; chỗ ngồi học = không gian. Quản lý học tập là quản lý không gian – thời gian.",
+                lesson: "Sắp xếp không gian và quản lý thời gian hiệu quả là tôn trọng tính khách quan."
+            },
+            {
+                id: 5,
+                title: "Ý thức là hình ảnh chủ quan",
+                author: "C. Mác",
+                quote: "“Ý niệm chẳng qua chỉ là vật chất được chuyển vào đầu óc con người và được cải biến đi.”",
+                explain: "Ý thức phản ánh khách quan nhưng hình thức phản ánh mang tính chủ quan.",
+                apply: "Cùng một điểm số: người A xem là thất bại, người B xem là dữ kiện để cải thiện.",
+                lesson: "Chọn cách nhìn tích cực và xây dựng là phát huy tính năng động chủ quan."
+            },
+            {
+                id: 6,
+                title: "Phương pháp luận: Khách quan + Chủ quan",
+                author: "Triết học Mác – Lênin",
+                quote: "Phải xuất phát từ thực tế khách quan, đồng thời phát huy tính năng động chủ quan.",
+                explain: "Tránh duy ý chí và tránh thụ động. Ý thức tác động trở lại vật chất thông qua thực tiễn.",
+                apply: "Muốn cải thiện GPA: nhìn dữ kiện + đổi cách học + luyện tập đều.",
+                lesson: "Thành công = điều kiện thật + nỗ lực đúng hướng."
+            }
+        ];
+
+        const sealSymbols = ['🧧', '🏮', '🎎', '🎏', '🍊', '🌸'];
+
+        const zodiacMonths = [
+            { monthNo: 1, month: "Tháng Giêng", zodiac: "Tý", color: "#e10600" },
+            { monthNo: 2, month: "Tháng Hai", zodiac: "Sửu", color: "#ff6b35" },
+            { monthNo: 3, month: "Tháng Ba", zodiac: "Dần", color: "#ffd700" },
+            { monthNo: 4, month: "Tháng Tư", zodiac: "Mão", color: "#38b000" },
+            { monthNo: 5, month: "Tháng Năm", zodiac: "Thìn", color: "#0077b6" },
+            { monthNo: 6, month: "Tháng Sáu", zodiac: "Tỵ", color: "#9d4edd" },
+            { monthNo: 7, month: "Tháng Bảy", zodiac: "Ngọ", color: "#ff6b8b" },
+            { monthNo: 8, month: "Tháng Tám", zodiac: "Mùi", color: "#ff9e00" },
+            { monthNo: 9, month: "Tháng Chín", zodiac: "Thân", color: "#3a86ff" },
+            { monthNo: 10, month: "Tháng Mười", zodiac: "Dậu", color: "#8338ec" },
+            { monthNo: 11, month: "Tháng Mười Một", zodiac: "Tuất", color: "#ff006e" },
+            { monthNo: 12, month: "Tháng Chạp", zodiac: "Hợi", color: "#06d6a0" },
+        ];
+
+        const zodiacDialecticLessons = {
+            1: { topic: "Khởi đầu mới - Vật chất khách quan", principle: "Xuân về vạn vật đổi mới - Vật chất khởi đầu độc lập.", explain: "Ý thức chỉ phản ánh hiện thực khách quan.", apply: "Đặt mục tiêu năm mới dựa vào điều kiện thật." },
+            2: { topic: "Ý thức đón Xuân", principle: "Ý thức là hình ảnh chủ quan của thế giới khách quan.", explain: "Phản ánh có chọn lọc, phụ thuộc tri thức – kinh nghiệm.", apply: "Cùng một việc, đổi góc nhìn đúng → hành động đúng." },
+            3: { topic: "Nguồn gốc ý thức mùa Xuân", principle: "Ý thức nảy sinh từ bộ óc người + lao động + ngôn ngữ.", explain: "Không tách ý thức khỏi điều kiện vật chất – xã hội.", apply: "Muốn giỏi lên: học trong môi trường, có tương tác, có luyện tập." },
+            4: { topic: "Tính năng động của ý thức Xuân", principle: "Ý thức có thể tác động trở lại vật chất qua thực tiễn.", explain: "Không duy ý chí, nhưng cũng không thụ động.", apply: "Lập kế hoạch + kỷ luật → kết quả thay đổi thật." },
+            5: { topic: "Xuân vận động", principle: "Vận động là phương thức tồn tại của vật chất.", explain: "Mọi sự vật đều biến đổi, chuyển hoá.", apply: "Chia nhỏ mục tiêu, làm đều → tích luỹ theo quá trình." },
+            6: { topic: "Các hình thức vận động Xuân", principle: "Vận động đa dạng: cơ học, vật lý, hoá học, sinh học, xã hội.", explain: "Cái cao dựa trên cái thấp nhưng không thể quy giản hoàn toàn.", apply: "Học tập có nhiều 'tầng': thói quen + tư duy + kỹ năng." },
+            7: { topic: "Đứng im tương đối mùa Xuân", principle: "Đứng im là ổn định tương đối trong điều kiện nhất định.", explain: "Đứng im là 'một dạng' của vận động.", apply: "Tạo routine (giờ học/giờ ngủ) để ổn định mà tiến bộ." },
+            8: { topic: "Không gian mùa Xuân", principle: "Không gian là hình thức tồn tại của vật chất vận động.", explain: "Trật tự, kết cấu, sự cùng tồn tại của sự vật.", apply: "Tối ưu góc học tập: gọn – ít nhiễu – đủ ánh sáng." },
+            9: { topic: "Thời gian Xuân", principle: "Thời gian là hình thức tồn tại, thể hiện sự kế tiếp – diễn biến.", explain: "Quá trình có trước – sau, nhịp độ, deadline.", apply: "Dùng lịch tuần + Pomodoro để biến thời gian thành 'đòn bẩy'." },
+            10: { topic: "Không gian–thời gian thống nhất Xuân", principle: "Không có vật chất vận động ngoài không gian và thời gian.", explain: "Không có 'khung rỗng' thuần tuý tách rời vật chất.", apply: "Muốn hiệu quả: quản lý cả không gian lẫn thời gian." },
+            11: { topic: "Tôn trọng khách quan Xuân", principle: "Xuất phát từ điều kiện khách quan của sự vật.", explain: "Tránh ảo tưởng, tránh 'tự áp KPI' vượt thực tế.", apply: "Đo đúng năng lực hiện tại rồi mới nâng dần." },
+            12: { topic: "Phương pháp luận Xuân (khách quan + chủ quan)", principle: "Tôn trọng khách quan + phát huy năng động chủ quan.", explain: "Ý thức tác động trở lại vật chất thông qua thực tiễn.", apply: "Chốt mục tiêu → kế hoạch → đo tiến độ → điều chỉnh." },
+        };
+
+        /* =========================
+          MODAL FUNCTIONS
+        ========================= */
+        const modalOverlay = document.getElementById('modalOverlay');
+        const closeModalBtn = document.getElementById('closeModal');
+        const modalTopic = document.getElementById('modalTopic');
+        const modalAuthor = document.getElementById('modalAuthorText');
+        const modalQuote = document.getElementById('modalQuote');
+        const modalExplain = document.getElementById('modalExplain');
+        const modalApply = document.getElementById('modalApply');
+        const modalLesson = document.getElementById('modalLesson');
+        const printBtn = document.getElementById('printBtn');
+
+        function openModalPayload({ title, author, quote, explain, apply, lesson, type = 'envelope' }) {
+            modalTopic.textContent = title;
+            modalAuthor.textContent = author ? `— ${author}` : "";
+            modalQuote.textContent = quote || "";
+            modalExplain.textContent = explain || "";
+            modalApply.textContent = apply || "";
+            modalLesson.textContent = lesson || "";
+
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            if (type === 'envelope' && !window.hasShownTetEffect) {
+                createTetEffect();
+                window.hasShownTetEffect = true;
+            }
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+        });
+
+        printBtn.addEventListener('click', () => {
+            const printContent = `
+                <div style="font-family: Arial, sans-serif; padding: 30px; max-width: 600px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, #fff5f5, #fff9f0);">
+                    <h1 style="color: #e10600; border-bottom: 3px solid #ffd700; padding-bottom: 15px; margin-bottom: 20px; font-size: 2.2rem;">
+                        🧧 ${modalTopic.textContent} 🧧
+                    </h1>
+                    <p style="color: #0077b6; font-weight: bold; font-size: 1.2em; margin-bottom: 30px; background: #ffd700; padding: 10px; border-radius: 10px;">
+                        ${document.getElementById('modalAuthorText').textContent}
+                    </p>
+                    <div style="background: #fff5f5; padding: 25px; border: 3px solid #ffd700; margin: 25px 0; font-style: italic; font-size: 1.2em; line-height: 1.6; border-radius: 15px;">
+                        ${modalQuote.textContent}
+                    </div>
+                    <h3 style="color: #e10600; margin-top: 30px; background: #ffd700; padding: 10px; border-radius: 10px;">📚 GIẢI THÍCH TRIẾT HỌC</h3>
+                    <p style="line-height: 1.7; margin-bottom: 20px;">${modalExplain.textContent}</p>
+                    <h3 style="color: #e10600; background: #ffd700; padding: 10px; border-radius: 10px;">🎯 LIÊN HỆ THỰC TIỄN</h3>
+                    <p style="line-height: 1.7; margin-bottom: 20px;">${modalApply.textContent}</p>
+                    <h3 style="color: #e10600; background: #ffd700; padding: 10px; border-radius: 10px;">💡 BÀI HỌC ỨNG DỤNG</h3>
+                    <p style="line-height: 1.7; margin-bottom: 40px;">${modalLesson.textContent}</p>
+                    <div style="margin-top: 50px; padding-top: 20px; border-top: 3px solid #e10600; color: #8a4b4b; font-size: 0.9em; text-align: center;">
+                        <strong>TRIẾT HỌC XUÂN 2026</strong><br>
+                        Chúc năm mới AN KHANG - THỊNH VƯỢNG!
+                    </div>
+                </div>
+            `;
+
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(printContent);
+            printWindow.document.close();
+            printWindow.print();
+        });
+
+        /* =========================
+          TET EFFECT
+        ========================= */
+        function createTetEffect() {
+            const colors = ['#e10600', '#ffd700', '#ff6b35', '#38b000'];
+            const container = document.createElement('div');
+            container.style.position = 'fixed';
+            container.style.top = '0';
+            container.style.left = '0';
+            container.style.width = '100%';
+            container.style.height = '100%';
+            container.style.pointerEvents = 'none';
+            container.style.zIndex = '1999';
+            document.body.appendChild(container);
+
+            for (let i = 0; i < 200; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = `${Math.random() * 15 + 10}px`;
+                particle.style.height = particle.style.width;
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.borderRadius = Math.random() > 0.3 ? '50%' : '0';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = '-40px';
+                particle.style.opacity = '0.9';
+                particle.style.boxShadow = `0 0 20px ${particle.style.backgroundColor}`;
+
+                container.appendChild(particle);
+
+                const animation = particle.animate([
+                    {
+                        transform: 'translateY(0) rotate(0deg)',
+                        opacity: 1
+                    },
+                    {
+                        transform: `translateY(${window.innerHeight + 300}px) rotate(${720 * Math.random()}deg)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: 2500 + Math.random() * 2000,
+                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                });
+
+                animation.onfinish = () => {
+                    particle.remove();
+                    if (container.children.length === 0) {
+                        container.remove();
+                    }
+                };
+            }
+        }
+
+        /* =========================
+          INITIALIZE ENVELOPES
+        ========================= */
+        function initEnvelopes() {
+            const grid = document.getElementById('envelopesGrid');
+            grid.innerHTML = "";
+
+            philosophyEnvelopes.forEach((envelope, index) => {
+                const card = document.createElement('div');
+                card.className = 'envelope-card';
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                card.innerHTML = `
+                    <div class="envelope-number">${envelope.id}</div>
+                    <h3 class="envelope-title">${envelope.title}</h3>
+                    <p class="envelope-author">
+                        <i class="fas fa-dragon"></i>
+                        ${envelope.author}
+                    </p>
+                    <p class="envelope-quote-preview">${envelope.quote}</p>
+                    <div class="envelope-footer">
+                        <div class="envelope-seal">${sealSymbols[index]}</div>
+                        <p class="envelope-hint">
+                            <i class="fas fa-hand-pointer"></i>
+                            NHẬN LÌ XÌ TRIẾT HỌC
+                        </p>
+                    </div>
+                `;
+
+                card.addEventListener('click', () => {
+                    openModalPayload({
+                        title: envelope.title,
+                        author: envelope.author,
+                        quote: envelope.quote,
+                        explain: envelope.explain,
+                        apply: envelope.apply,
+                        lesson: envelope.lesson,
+                        type: 'envelope'
+                    });
+                });
+
+                grid.appendChild(card);
+            });
+        }
+
+        /* =========================
+          INITIALIZE CALENDAR
+        ========================= */
+        function initCalendar() {
+            const grid = document.getElementById('calendarGrid');
+            grid.innerHTML = "";
+
+            zodiacMonths.forEach((month, index) => {
+                const lesson = zodiacDialecticLessons[month.monthNo];
+                const card = document.createElement('div');
+                card.className = 'month-card';
+                card.style.borderTopColor = month.color;
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                card.innerHTML = `
+                    <div class="month-header">
+                        <div class="month-number" style="background: ${month.color}">${month.monthNo}</div>
+                        <h4 class="month-name">${month.month}</h4>
+                    </div>
+                    <div class="zodiac-sign" style="background: ${month.color}">${month.zodiac}</div>
+                    <p class="philosophy-preview"><strong>${lesson.topic}:</strong> ${lesson.principle}</p>
+                    <p class="click-hint">
+                        <i class="fas fa-dragon"></i>
+                        KHÁM PHÁ TRIẾT HỌC THÁNG NÀY
+                    </p>
+                `;
+
+                card.addEventListener('click', () => {
+                    openModalPayload({
+                        title: `${month.month} • ${month.zodiac} - ${lesson.topic}`,
+                        author: "Triết học Mác – Lênin (Chương 2)",
+                        quote: lesson.principle,
+                        explain: lesson.explain,
+                        apply: lesson.apply,
+                        lesson: "Gợi ý: Chọn 1 hành động nhỏ hôm nay (10-20 phút) để biến 'ý thức' thành 'thực tiễn'.",
+                        type: 'calendar'
+                    });
+                });
+
+                grid.appendChild(card);
+            });
+        }
+
+        /* =========================
+          INITIALIZE EVERYTHING
+        ========================= */
+        document.addEventListener('DOMContentLoaded', () => {
+            createFireworks();
+
+            initEnvelopes();
+            initCalendar();
+
+            // Add Tet sound effect on first envelope click
+            const envelopes = document.querySelectorAll('.envelope-card');
+            envelopes.forEach((env, index) => {
+                env.style.opacity = '0';
+                env.style.transform = 'translateY(40px)';
+
+                setTimeout(() => {
+                    env.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                    env.style.opacity = '1';
+                    env.style.transform = 'translateY(0)';
+                }, index * 100);
+
+                env.addEventListener('mouseenter', function () {
+                    const seal = this.querySelector('.envelope-seal');
+                    if (seal) {
+                        seal.style.animation = 'seal-explode 0.6s ease';
+                    }
+                });
+
+                env.addEventListener('mouseleave', function () {
+                    const seal = this.querySelector('.envelope-seal');
+                    if (seal) {
+                        setTimeout(() => {
+                            seal.style.animation = 'seal-glow 2s ease-in-out infinite';
+                        }, 600);
+                    }
+                });
+            });
+
+            // Initialize Tet effect flag
+            window.hasShownTetEffect = false;
+
+            // Play Tet music on load (optional)
+            setTimeout(() => {
+                // Uncomment to play Tet music
+                // const audio = new Audio('https://assets.mixkit.co/music/preview/mixkit-happy-new-year-2020-474.mp3');
+                // audio.volume = 0.3;
+                // audio.play().catch(e => console.log("Audio playback failed:", e));
+            }, 1000);
+
+            // Add scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.section-header, .calendar-container').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(50px)';
+                el.style.transition = 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+
+</html>
